@@ -1,0 +1,12 @@
+InsertUser:
+> -1 : Không có data
+> -2 : userName không hợp lệ
+> -3 : passWord không hợp lệ
+> -4 : fullName không hợp lệ
+> -5 : email không hợp lệ
+> -6 : phone không hợp lệ
+> -7 : birthDay không hợp lệ
+> -8 : homeTown không hợp lệ
+> -101 : err
+> -9 : userName đã tồn tại
+> 1 : InsertUser thành công
