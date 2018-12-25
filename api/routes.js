@@ -52,7 +52,8 @@ var appRoutes = function(app){
             }
     		      users.CheckLogin(data, function(ret){
     			         console.log('CheckLogin => ' + Object.keys(ret).length); //Object.keys(myObject).length;
-                   res.status(200).send(ret);
+                   var code = Object.keys(ret).length==1?200:204;
+                   res.status(code).send(ret);
     		      });
         });
 }

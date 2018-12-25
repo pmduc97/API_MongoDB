@@ -55,7 +55,7 @@ User.InsertUser = function (data, callback) {
 }
 
 User.SelectAll = function (callback) {
-    User.find({quyen: false},function (err, _doc) {
+    User.find({ },function (err, _doc) {
         if (err) return callback(-101);
         if (_doc) {
             return callback(_doc);
@@ -80,11 +80,11 @@ User.DeleteOne = function (data,callback) {
 }
 
 User.CheckLogin = function (data,callback) {
-  if (!data) return callback(-1);
-  if (!data.userName || data.userName.length < 6) return callback(-2);
-  if (!data.passWord || data.passWord.length < 6) return callback(-3);
-    User.find({ userName: data.userName , passWord: data.passWord, quyen: data.quyen}, function (err, _doc) {
-        if (err) return callback(-101);
+  if (!data) return callback([]);
+  if (!data.userName || data.userName.length < 6) return callback([]);
+  if (!data.passWord || data.passWord.length < 6) return callback([]);
+    User.find({ userName: data.userName , passWord: data.passWord}, function (err, _doc) {
+        if (err) return callback([]);
         if (_doc) {
             return callback(_doc);
         }
